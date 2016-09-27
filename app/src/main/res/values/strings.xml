@@ -1,5 +1,25 @@
 <resources>
     <string name="app_name">CallTest</string>
-    <string name="step_1">step 1</string>
     <string name="accessibility_service_description">This service records pop ups sent by your mobile operator, and saves them in XXXX App. It is absolutely safe to use.</string>
+
+    <string-array name="test_list">
+        <item>PPS makes a call to visit country</item>
+        <item>PPS makes a call to Thailand</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+    </string-array>
+    <string name="calling_number">0935850868</string>
+    <string name="visited_country_number">0935850635</string>
+    <string name="third_country_number">0622210140</string>
+    <string name="thailand_number">0802395690</string>
+
 </resources>
