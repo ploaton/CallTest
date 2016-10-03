@@ -3,23 +3,27 @@
     <string name="accessibility_service_description">This service records pop ups sent by your mobile operator, and saves them in XXXX App. It is absolutely safe to use.</string>
 
     <string-array name="test_list">
-        <item>PPS makes a call to visit country</item>
-        <item>PPS makes a call to Thailand</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
+        <item>PPS makes a call to visit country (+CC), Call(B), EndCallAfter(10) </item>
+        <item>PPS makes a call to Thailand (+CC), Call(D), EndCallAfter(10)</item>
+        <item>PPS makes a call to 3rd country (+CC), Call(C), EndCallAfter(10)</item>
+        <item>PPS makes a call to Thailand (08xxxx)Feel Like Home=Active, CallNumber(0802395690), EndCallAfter(10)</item>
+        <item>PPS makes a call to IR forbidden number, CallNumber(+35567231), EndCallAfter(10)</item>
+        <item>PPS makes a call to IR forbidden number, CallNumber(0035567231), EndCallAfter(10)</item>
+        <item>PPS send sms IR (to local), SMS(0935850635)</item>
+        <item>PPS send sms IR (to +66), SMS(0802395690)</item>
+        <item>PPS send sms IR (to +CCxxx 3rd country), SMS(0622210140)</item>
+        <item>PPS make call forward uncondition (A->B->C) -> B is roaming,Call(C), EndCallAfter(10), USSD(*21*0935850635) </item>
+        <item>Test Email, Email()</item>
     </string-array>
+    <!-- A number-->
     <string name="calling_number">0935850868</string>
+    <!-- B number-->
     <string name="visited_country_number">0935850635</string>
+    <!-- C number-->
     <string name="third_country_number">0622210140</string>
+    <!-- D number-->
     <string name="thailand_number">0802395690</string>
+    <!-- admin number-->
+    <string name="administrator_number">+66622210140</string>
 
 </resources>

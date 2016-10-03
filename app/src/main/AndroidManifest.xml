@@ -6,6 +6,7 @@
     <uses-feature android:name="android.hardware.telephony"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
@@ -13,17 +14,14 @@
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
     <uses-permission android:name="android.permission.BIND_INCALL_SERVICE"/>
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
-    <!--<uses-permission android:name="android.permission.WAKE_LOCK" />-->
-    <!--<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />-->
-    <!--<uses-permission android:name="android.permission.READ_CONTACTS"/>-->
 
-    <service android:name="your.package.YourInCallServiceImplementation"
-        android:permission="android.permission.BIND_INCALL_SERVICE">
-        <meta-data android:name="android.telecom.IN_CALL_SERVICE_UI" android:value="true" />
-        <intent-filter>
-            <action android:name="android.telecom.InCallService"/>
-        </intent-filter>
-    </service>
+    <!--<service android:name="your.package.YourInCallServiceImplementation"-->
+        <!--android:permission="android.permission.BIND_INCALL_SERVICE">-->
+        <!--<meta-data android:name="android.telecom.IN_CALL_SERVICE_UI" android:value="true" />-->
+        <!--<intent-filter>-->
+            <!--<action android:name="android.telecom.InCallService"/>-->
+        <!--</intent-filter>-->
+    <!--</service>-->
 
     <application
         android:allowBackup="true"
@@ -32,8 +30,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <receiver android:name=".telephony.SmsReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"></action>
+            </intent-filter>
+
+
+        </receiver>
         <receiver
-            android:name=".CallReceiver"
+            android:name=".telephony.CallReceiver"
             android:enabled="true"
             android:exported="true" >
             <intent-filter>
