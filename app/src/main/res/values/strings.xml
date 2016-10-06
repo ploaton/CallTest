@@ -26,4 +26,10 @@
     <!-- admin number-->
     <string name="administrator_number">+66622210140</string>
 
+    <string name="urlDownloadTest100Kb">http://speedtest.ftp.otenet.gr/files/test100k.db</string>
+    <string name="urlDownloadTest1Mb">http://speedtest.ftp.otenet.gr/files/test1Mb.db</string>
+    <string name="urlDownloadTest10Mb">http://speedtest.ftp.otenet.gr/files/test10Mb.db</string>
+    <string name="urlDownloadTest100Mb">http://speedtest.ftp.otenet.gr/files/test100Mb.db</string>
+
+
 </resources>

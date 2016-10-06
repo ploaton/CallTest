@@ -14,6 +14,8 @@
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
     <uses-permission android:name="android.permission.BIND_INCALL_SERVICE"/>
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <!--<service android:name="your.package.YourInCallServiceImplementation"-->
         <!--android:permission="android.permission.BIND_INCALL_SERVICE">-->
@@ -34,8 +36,6 @@
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"></action>
             </intent-filter>
-
-
         </receiver>
         <receiver
             android:name=".telephony.CallReceiver"
@@ -47,7 +47,15 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".MainActivity">
+        <receiver android:name=".actions.DownloadAction">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+            </intent-filter>
+        </receiver>
+
+
+        <activity android:name=".MainActivity"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
